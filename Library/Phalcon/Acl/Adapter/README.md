@@ -57,3 +57,15 @@ $acl->allow('Admin', 'Products', 'insert');
 var_dump($acl->isAllowed('Admins', 'Products', 'update'));
 
 ```
+Redis
+-----
+This adapter uses a Redis to store the ACL list:
+
+```php
+
+$redis = new \Redis();
+$redis->connect('127.0.0.1', 6379);
+
+$acl = new Phalcon\Acl\Adapter\Redis($redis);
+
+```
